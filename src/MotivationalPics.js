@@ -2,10 +2,14 @@ import React, {
   Component
 } from 'react';
 
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 class MotivationalPics extends Component {
   constructor(props) {
     super(props);
-    this.state = {urls: "dsa"};
+    this.state = {urls: []};
   }
   async componentDidMount() {
     console.log("hello")
@@ -16,16 +20,21 @@ class MotivationalPics extends Component {
       let i
       let numOfImages = 0
       let totalNumOfImages = 1
-      let img;
-      for (i = 0; i < getMotivatedResult.data.children.length; i++) {
-        if (getMotivatedResult.data.children[i].data.link_flair_css_class == "image") {
+      let img, ranNum;
+      let numOfMotivationalPosts = getMotivatedResult.data.children.length
+      for (i = 0; i < numOfMotivationalPosts; i++) {
+        ranNum = getRandomInt(numOfMotivationalPosts)
+        if (getMotivatedResult.data.children[ranNum].data.link_flair_css_class == "image") {
           //var img = document.createElement('img');
-          img = getMotivatedResult.data.children[i].data.url;
+          img = getMotivatedResult.data.children[ranNum].data.url;
           //img.style.width = "35%";
           //document.getElementById('body').appendChild(img);
           //document.getElementById('body').appendChild(document.createElement('br'))
           numOfImages++;
-          this.setState({urls: img})
+          //this.setState({urls: img})
+          this.setState(previousState => ({
+            urls: [...previousState.urls, img]
+          }));
             /*(state) => {
             const list = state.urls);
             console.log(this.state)
@@ -38,12 +47,13 @@ class MotivationalPics extends Component {
 
     }
   }
-
+//
   render() {
-
     return (
       <div>
-      <img src={this.state.urls} width="200px"/>
+      {this.state.urls.map((url,index) => {
+        return <img src={url} key={index} width="800px"/>
+      })}
       </div>
     );
   }
