@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React, { useState , useEffect} from 'react';
 import DateTime from './DateTime';
 import MotivationalPics from './MotivationalPics'
-
+import Todo from './Todo'
 function App() {
 
   const [time, setTime] = useState(new Date().toLocaleTimeString());
@@ -12,11 +12,12 @@ function App() {
       () => setTime(new Date().toLocaleTimeString()), 1000
     )
   }, []);
-
+//<MotivationalPics/>
   return (
     <div className="App">
     <DateTime time={time}/>
-    <MotivationalPics/>
+    <Todo/>
+    <Todo/>
     </div>
   );
 }
