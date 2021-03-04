@@ -3,6 +3,9 @@ import React, { useState , useEffect} from 'react';
 import DateTime from './DateTime';
 import MotivationalPics from './MotivationalPics'
 import Todo from './Todo'
+import Weather from './Weather'
+
+import './taskList.css'
 function App() {
 
   const [time, setTime] = useState(new Date().toLocaleTimeString());
@@ -15,9 +18,13 @@ function App() {
 //<MotivationalPics/>
   return (
     <div className="App">
-    <DateTime time={time}/>
-    <Todo/>
-    <Todo/>
+
+    <DateTime className="dateTime" time={time}/>
+    <Todo className="goals" taskTitle="Goals"/>
+    <Todo className="tasks" taskTitle="Tasks"/>
+    <MotivationalPics className="motivation"/>
+    <Weather/>
+
     </div>
   );
 }

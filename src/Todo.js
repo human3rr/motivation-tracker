@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import TaskList from './TaskList'
+import './taskList.css'
+
 function Todo (props) {
 
   const [text, setText] = useState({tinput: ""});
@@ -12,7 +14,7 @@ function Todo (props) {
   function handleSubmit(event){
     const mtext = text.tinput;
     setTodoItems([
-      ...todoItems,{todolist:mtext}
+      ...todoItems,{todolist:mtext, id:Math.random()*1000}
     ])
     setText({tinput: ''});
     event.preventDefault();
@@ -21,14 +23,19 @@ function Todo (props) {
   return(
   <div>
 
-  <form >
+  <form className="todoForm">
   <label>
-    Task:
+    {props.taskTitle}
     <input type="text" value={text.tinput} onChange={handleChange} />
   </label>
   <input type="submit" value="Enter" onClick={handleSubmit}/>
 </form>
-<TaskList todoItems={todoItems} setTodoItems={setTodoItems}/>
+<div className="taskContainer">{
+  todoItems.map( (item, index) => {
+    return <TaskList key={item.id} item={item} index={index} todoItems={todoItems} setTodoItems={setTodoItems}/>
+  }
+)}
+</div>
   </div>
 )
 }

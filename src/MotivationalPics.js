@@ -12,7 +12,6 @@ class MotivationalPics extends Component {
     this.state = {urls: []};
   }
   async componentDidMount() {
-    console.log("hello")
       const getMotivatedResultData = await fetch('https://www.reddit.com/r/GetMotivated/.json')
       const getMotivatedResult = await getMotivatedResultData.json()
       console.log(getMotivatedResult.data.children)
@@ -52,7 +51,7 @@ class MotivationalPics extends Component {
     return (
       <div>
       {this.state.urls.map((url,index) => {
-        return <img src={url} key={index} width="800px"/>
+        return <img src={url} key={index} width="100%"/>
       })}
       </div>
     );

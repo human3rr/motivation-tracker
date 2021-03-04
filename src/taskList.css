@@ -1,0 +1,50 @@
+.App{
+  display: grid;
+  grid-template-columns: auto auto 50%;
+  grid-gap: 10px;
+    grid-template-areas:
+        "header header header"
+        "weather weather weather"
+        "left  middle right";
+}
+.dateTime{
+  grid-area: header;
+}
+.weatherTracker{
+  grid-area: weather;
+  text-align: center;
+  margin: auto;
+}
+.goals{
+  grid-area: left;
+}
+.tasks{
+  grid-area: middle;
+}
+.motivation{
+  grid-area: right;
+  width: 100%;
+}
+
+.taskele{
+  display: inline-block;
+  margin-right: 10px;
+}
+.task{
+ padding: 10px;
+ border: 2px solid black;
+ margin: auto;
+ margin-bottom: 5px;
+ margin-top: 5px;
+ width:auto;
+ height: 10px;
+ text-align: center;
+}
+.todoForm{
+  margin: auto;
+  text-align: center;
+}
+
+.taskContainer{
+  text-align: center;
+}
