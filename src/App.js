@@ -16,6 +16,8 @@ function App() {
     )
   }, []);
 //<MotivationalPics/>
+//    <Weather/>
+
   return (
     <div className="App">
 
@@ -23,7 +25,6 @@ function App() {
     <Todo className="goals" taskTitle="Goals"/>
     <Todo className="tasks" taskTitle="Tasks"/>
     <MotivationalPics className="motivation"/>
-    <Weather/>
 
     </div>
   );

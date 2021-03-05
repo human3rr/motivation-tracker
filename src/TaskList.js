@@ -12,7 +12,7 @@ function TaskList (props) {
     <div>
           <div className="task">
             <li className="taskele">{props.item.todolist}</li>
-            <button type="button" onClick={deleteHandler}>X</button>
+            <button className="deleteButton" type="button" onClick={deleteHandler}>X</button>
           </div>
     </div>
   )

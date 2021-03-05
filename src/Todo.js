@@ -26,9 +26,9 @@ function Todo (props) {
   <form className="todoForm">
   <label>
     {props.taskTitle}
-    <input type="text" value={text.tinput} onChange={handleChange} />
+    <input type="text" value={text.tinput} className="textField" onChange={handleChange} />
   </label>
-  <input type="submit" value="Enter" onClick={handleSubmit}/>
+  <input type="submit" value="Enter" className="enterBtn" onClick={handleSubmit}/>
 </form>
 <div className="taskContainer">{
   todoItems.map( (item, index) => {
