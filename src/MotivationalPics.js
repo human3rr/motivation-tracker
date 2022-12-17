@@ -6,6 +6,8 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
+const fetchImgTimeoutMs = 3000
+
 class MotivationalPics extends Component {
   constructor(props) {
     super(props);
@@ -54,7 +56,7 @@ class MotivationalPics extends Component {
   }
   async componentDidMount() {
       this.getMotivation()
-      setInterval(this.getMotivation.bind(this), 60000);
+      setInterval(this.getMotivation.bind(this), fetchImgTimeoutMs);
   }
 //
   render() {
