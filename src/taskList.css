@@ -1,5 +1,6 @@
 body {
-  background-color: #f8f8ff;
+  background-color: #1d1d1f;
+  color: #dbdbe2;
 }
 * {
   font-family: "Times New Roman", Times, serif;
@@ -84,6 +85,7 @@ body {
  display: grid;
  grid-template-columns: auto 30px;
  flex-wrap: wrap;
+ flex-shrink: 1;
 }
 .todoForm{
   margin: auto;
