@@ -23,7 +23,7 @@ function App() {
 
     <DateTime className="dateTime" time={time}/>
     <Todo className="goals" taskTitle="Goals"/>
-    <Todo className="tasks" taskTitle="Tasks"/>
+    {/*<Todo className="tasks" taskTitle="Tasks"/>*/}
     <MotivationalPics className="motivation"/>
 
     </div>

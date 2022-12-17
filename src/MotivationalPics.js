@@ -16,6 +16,7 @@ class MotivationalPics extends Component {
     const getMotivatedResult = await getMotivatedResultData.json()
     console.log(getMotivatedResult.data.children)
     console.log(getMotivatedResult.data.children.length);
+
     let i
     let numOfImages = 0
     let totalNumOfImages = 1
@@ -23,8 +24,11 @@ class MotivationalPics extends Component {
     let numOfMotivationalPosts = getMotivatedResult.data.children.length
     for (i = 0; i < numOfMotivationalPosts; i++) {
       ranNum = getRandomInt(numOfMotivationalPosts)
-      if (getMotivatedResult.data.children[ranNum].data.link_flair_css_class == "image") {
-        //var img = document.createElement('img');
+      //console.log(getMotivatedResult.data.children[ranNum].data.url)
+
+      //if (getMotivatedResult.data.children[ranNum].data.link_flair_css_class == "image") {
+      if (getMotivatedResult.data.children[ranNum].data.url.includes(".jpg") || getMotivatedResult.data.children[ranNum].data.url.includes(".png") ) {
+          //var img = document.createElement('img');
         img = getMotivatedResult.data.children[ranNum].data.url;
         //img.style.width = "35%";
         //document.getElementById('body').appendChild(img);

@@ -6,12 +6,12 @@ body {
 }
 .App{
   display: grid;
-  grid-template-columns: auto auto 50%;
+  grid-template-columns: auto 50%;
   grid-gap: 10px;
     grid-template-areas:
-        "header header header"
-        "weather weather weather"
-        "left  middle right";
+        "header header"
+        "weather weather"
+        "left right";
 }
 .dateTime{
   grid-area: header;
@@ -84,5 +84,6 @@ body {
 }
 
 .taskContainer{
+  display: flex;
   text-align: center;
 }
