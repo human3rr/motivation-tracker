@@ -8,7 +8,10 @@ function Todo (props) {
   const [todoItems, setTodoItems] = useState([]);
 
   function handleChange(event){
-    setText( {tinput: event.target.value})
+    console.log(event.target.value.length)
+    if(event.target.value.length < 50){
+      setText( {tinput: event.target.value})
+    }
     return 0;
   }
   function handleSubmit(event){
